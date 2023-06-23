@@ -1,2 +1,2 @@
 # trybe-exercicios
-para fazer  exercícios
+para fazer  exercícios na minha jornada da Trybe.
