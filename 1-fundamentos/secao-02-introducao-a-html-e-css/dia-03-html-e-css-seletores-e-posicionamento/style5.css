@@ -25,4 +25,23 @@ li em{
 }
 .pink-bg {
     background-color: pink;
+}
+#aliados li a:hover{
+    font-weight: bold;
+}
+#aliados li a[href*="stackoverflow"] {
+    color: orange;
+  }
+  #aliados li a[href*="w3schools"] {
+    color: green;
+  }
+  #aliados li a[href*="mozilla"] {
+    color: black;
+  }
+  #aliados li a[href*="devdocs"] {
+    color: yellow;
+    background-color: black;
+  }
+  #aliados li a[href*="trybe"] {
+    color: green;
   }
