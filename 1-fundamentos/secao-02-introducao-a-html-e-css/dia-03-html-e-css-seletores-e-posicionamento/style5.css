@@ -7,3 +7,11 @@ ol li:nth-child(odd){
 ol li:nth-child(even){
     color: green;
 }
+h1, h3{
+    color: red;
+}
+h1, h3 em{
+    font-size: 40px;
+    border: 1px solid black;
+}
+    
