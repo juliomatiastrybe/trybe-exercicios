@@ -33,6 +33,7 @@ h1 {
 
   h3 {
     text-align: center;
+    border: 1px solid black;
   }
 
   ul{
@@ -42,4 +43,11 @@ h1 {
 
   .premiacao ul li{
     display: inline;
+ }
+ .color1{
+    color: brown;
+    background-color: blueviolet;
+ }
+ .color2{
+    color: blue;
  }
