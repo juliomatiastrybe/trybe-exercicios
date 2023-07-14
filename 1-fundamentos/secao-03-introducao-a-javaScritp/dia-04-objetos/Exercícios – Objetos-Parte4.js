@@ -22,8 +22,8 @@ const basket = [
     const result = {};
     
     // Loop que irá contar quantas vezes cada fruta aparece no array basket
-    for (let index = 0; index < basket.length; index += 1) {
-      let fruit = basket[index];
+    for (let index = 0; index < array.length; index += 1) {
+      let fruit = array[index];
       // Se a propriedade com o nome da fruta ainda não existir, então ela será criada com o valor 1. Caso ela já exista, vamos incrementar o valor.
       if (!result[fruit]) {
         // console.log(!result[fruit]);
@@ -42,9 +42,8 @@ const basket = [
 // depois junta tudo no array "newArray", e retorna o seu resultado com o formato desejado de impressão, com o console.log.
   const increaseS = (array) => {
 
-    // a constante resultObejectFrit recebe o resultado da função obejctFruit, com o paramentro do array basket.
+    // a constante resultObejectFrit recebe o resultado da função obejctFruit, com o paramentro: array basket.
     const resultObjectFruit = objectFruit(array);
-
     // Convertemos o objeto resultObejctFruit em um array
     const entries = Object.entries(resultObjectFruit);
 
