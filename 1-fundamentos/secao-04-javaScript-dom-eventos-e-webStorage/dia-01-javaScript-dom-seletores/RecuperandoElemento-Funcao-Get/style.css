@@ -17,7 +17,7 @@ nav {
     border: solid 1px #aaa;
     text-align: center;
     text-decoration: none;
-    color: #b61414;
+    color: #555;
   }
   
   nav a[aria-current='page'] {
