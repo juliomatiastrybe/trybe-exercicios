@@ -24,7 +24,7 @@ const novoFilhoDoFilhoDofilho = document.createElement('section');
 novoFilhoDoFilhoDofilho.id = 'novoFilhoDoFilhoDoFilho'
 console.log(novoFilhoDoFilhoDofilho);
 
-primeiroFilhoDoFilho.appendChild(novoFilhoDoFilhoDofilho)
+primeiroFilhoDoFilho.appendChild(novoFilhoDoFilhoDofilho);
 
 // A partir desse filho criado, acesse terceiroFilho.
 
