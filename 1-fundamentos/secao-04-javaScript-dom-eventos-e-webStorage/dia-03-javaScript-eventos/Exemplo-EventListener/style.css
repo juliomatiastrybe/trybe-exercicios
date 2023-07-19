@@ -1,0 +1,23 @@
+.flexy {
+    display: flex;
+    font-size: 20px;
+  }
+  #input-texto {
+    width: 80%;
+    line-height: 24px;
+  }
+  .fonte {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .como-usar {
+    border: 1px solid black;
+    width: 75%;
+  }
+  .quadrado {
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+  }
+  
