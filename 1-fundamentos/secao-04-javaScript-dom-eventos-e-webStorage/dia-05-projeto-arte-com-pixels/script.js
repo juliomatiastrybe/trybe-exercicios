@@ -3,7 +3,10 @@ const board = document.querySelector('#pixel-board');
 if (localStorage.getItem('pixelBoard') === null) {
   localStorage.setItem('pixelBoard', JSON.stringify([]));
 }
-const pixelsRows = [1, 2, 3, 4, 5];
+if (localStorage.getItem('boardSize') === null) {
+  localStorage.setItem('boardSize', JSON.stringify([1, 2, 3, 4, 5]));
+}
+const pixelsRows = JSON.parse(localStorage.getItem('boardSize')) || [1, 2, 3, 4, 5];
 
 // Define a cor de fundo da paleta
 colors.forEach((color) => {
@@ -62,24 +65,32 @@ colors.forEach((selected) => {
 });
 
 // Coloca as cores nos pixels
-const coloredPixels = document.querySelectorAll('.pixel');
+const getPixels = () => {
+  const coloredPixels = document.querySelectorAll('.pixel');
+  return coloredPixels;
+};
+
 const savedColors = JSON.parse(localStorage.getItem('pixelBoard')) || []; // Salva as cores para usar no getColorsBack
 
-coloredPixels.forEach((pixel, index) => {
-  pixel.addEventListener('click', (event) => {
-    if (!selectedColor) return;
-    const eventTarget = event.target;
-    const backgroundElement = selectedColor.style.backgroundColor;
-    eventTarget.style.backgroundColor = backgroundElement;
+const giveColorToPixel = () => {
+  const coloredPixels = getPixels();
+  coloredPixels.forEach((pixel, index) => {
+    pixel.addEventListener('click', (event) => {
+      if (!selectedColor) return;
+      const eventTarget = event.target;
+      const backgroundElement = selectedColor.style.backgroundColor;
+      eventTarget.style.backgroundColor = backgroundElement;
 
-    const pixelsColors = {
-      color: pixel.style.backgroundColor,
-      index,
-    };
-    savedColors.push(pixelsColors);
-    localStorage.setItem('pixelBoard', JSON.stringify(savedColors));
+      const pixelsColors = {
+        color: pixel.style.backgroundColor,
+        index,
+      };
+      savedColors.push(pixelsColors);
+      localStorage.setItem('pixelBoard', JSON.stringify(savedColors));
+    });
   });
-});
+};
+giveColorToPixel();
 
 // Criando botão que resta o border
 const button = document.createElement('button');
@@ -90,6 +101,7 @@ const palette = document.querySelector('section');
 palette.appendChild(button);
 
 button.addEventListener('click', () => {
+  const coloredPixels = getPixels();
   coloredPixels.forEach((p) => {
     p.style.backgroundColor = 'white';
   });
@@ -98,9 +110,9 @@ button.addEventListener('click', () => {
 
 // Criando botão de cores aleatórias
 const randomColors = () => {
-  const r = parseInt(Math.random() * 255);
-  const g = parseInt(Math.random() * 255);
-  const b = parseInt(Math.random() * 255);
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
 
   return `rgb(${r}, ${g}, ${b})`;
 };
@@ -117,41 +129,21 @@ buttonRandom.addEventListener('click', () => {
   });
 });
 
-// Recupera as cores do localStorage
-const getColorsBack = () => {
-  savedColors.forEach((getBack) => {
-    const pixel = coloredPixels[getBack.index];
-    pixel.style.backgroundColor = getBack.color;
-  });
-};
-
-window.onload = getColorsBack;
-
 // Input que muda o border
 const btnChangeBorder = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
 
-// const getNewRows = () => {
-//   const newRows = document.querySelectorAll('.row');
-//   return newRows;
-// };
-
-// const fillNewPixelsLine = () => {
-//   const newRows = getNewRows();
-//   newRows.forEach((rw) => {
-//     pixelsRows.forEach((n) => {
-//       const pixel = document.createElement('div');
-//       pixel.className = 'pixel';
-//       pixel.style.border = '1px solid black';
-//       pixel.style.width = '40px';
-//       pixel.style.height = '40px';
-//       pixel.style.backgroundColor = 'white';
-//       pixel.style.display = 'inline-block';
-//       rw.appendChild(pixel);
-//     });
-//   });
-// };
-
+const countLines = () => {
+  const inputValue = inputNumber.value;
+  for (let count = 1; count <= inputValue; count += 1) {
+    if (count > 50) {
+      break;
+    } else if (!pixelsRows.includes(count)) {
+      pixelsRows.push(count);
+    }
+    localStorage.setItem('boardSize', JSON.stringify(pixelsRows));
+  }
+};
 btnChangeBorder.addEventListener('click', (event) => {
   event.preventDefault();
   const rows = getRows();
@@ -165,13 +157,22 @@ btnChangeBorder.addEventListener('click', (event) => {
     window.alert('Board inválido!');
   }
 
-  for (let count = 1; count <= value; count += 1) {
-    if (!pixelsRows.includes(count)) {
-      pixelsRows.push(count);
-    }
-  }
+  countLines();
+
   inputNumber.value = '';
 
   createPixelsLine();
   fillPixelsLine();
+  giveColorToPixel();
 });
+
+// Recupera as cores do localStorage
+const getColorsBack = () => {
+  savedColors.forEach((getBack) => {
+    const coloredPixels = getPixels();
+    const pixel = coloredPixels[getBack.index];
+    pixel.style.backgroundColor = getBack.color;
+  });
+};
+
+window.onload = getColorsBack;

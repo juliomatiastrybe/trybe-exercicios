@@ -7,7 +7,6 @@ const list = document.getElementById('phrases-list');
 const insertPhraseInDOM = () => {
 
   const phrasesList = JSON.parse(localStorage.getItem('phrases'));
-  console.log(phrasesList);
   // A phrasesList vai pegar o array com a frase digitada no input, da função 
   const listLength = phrasesList.length - 1;
   // listLength vai receber o array e pegar o seu tamanho através do length e
@@ -26,7 +25,7 @@ const insertPhraseInDOM = () => {
 // e vai adicionar a nova frase ao localStorage, que foi inputada através do evento do butão.
 const addPhraseToLocalStorage = () => {
   const oldList = JSON.parse(localStorage.getItem('phrases'));
-  // vai capturar o array vazio, cria no initialRendering
+  // vai capturar o array vazio, criado no initialRendering
   const phraseText = input.value;
   // vai colocar a fraze que foi digitada no input, em um variável.
   oldList.push(phraseText);
@@ -39,13 +38,13 @@ const addPhraseToLocalStorage = () => {
 
 // função é inicializado ao abrir a página.
 const initialRendering = () => {
-    // se ao iniciar a pagina o a chave que esta no localStorage for = a null;
+    // se ao iniciar a pagina a chave que esta no localStorage for = a null;
     // ou seja não existir.
   if (localStorage.getItem('phrases') === null) {
     // ele vai cria chave 'phrases' passando um array como valor no localStorage.
     localStorage.setItem('phrases', JSON.stringify([]));
-    // se a a chave 'phrases' já existir no localStorage a funão vai entra no else
-  } else {
+    // se a a chave 'phrases' já existir no localStorage a função vai entra no else
+   } else {
     // ele vai criar uma li, para ul, adionando a frase digitada no input a ela.
     // phrasesList vai trazer um array vazio, coforme foi criado no if.
     const phrasesList = JSON.parse(localStorage.getItem('phrases'));
@@ -69,7 +68,7 @@ button.addEventListener('click', addPhraseToLocalStorage);
 // vai fazer com que assim que a página for carregada chame a função initialRendering.
 window.onload = () => initialRendering();
 
-
+// script que não trás o valores armazenado no localStorage.
 // const button = document.getElementById('add-button');
 // const input = document.getElementById('phrases-input');
 // const list = document.getElementById('phrases-list');
