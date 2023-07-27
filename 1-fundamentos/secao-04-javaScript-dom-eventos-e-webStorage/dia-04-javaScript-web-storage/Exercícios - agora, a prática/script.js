@@ -47,6 +47,7 @@ window.onload = () => {
     restoreFontFamily();
 
     // guarda o as preferencia escolhidas no localStorage
+    
     const storageBackgroudColor = (backgroudColor) => {
       if (localStorage.getItem('backgroudColor') === null) {
         localStorage.setItem('backgroudColor', JSON.stringify(backgroudColor));
