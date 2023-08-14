@@ -1,4 +1,4 @@
-const btnSubmit = document.querySelector('#submit-btn');
+// const btnSubmit = document.querySelector('#submit-btn');
 
 // window.onload = btnSubmit.addEventListener('click', (event) => {
 //         event.preventDefault();
@@ -19,11 +19,11 @@ const validate = new JustValidate(
     {
       errorFieldCssClass: 'is-invalid',
       errorFieldStyle: {
-        border: '1px solid red',
+        border: '1px solid blue',
       },
       errorLabelCssClass: 'is-label-invalid',
       errorLabelStyle: {
-        color: 'red',
+        color: 'blue',
         textDecoration: 'underlined',
       },
       focusInvalidField: true,
@@ -84,10 +84,10 @@ const validate = new JustValidate(
       },
     ]);
   
-  window.onload = function () {
-    const clearBtn = document.querySelector('#clear-btn');
-    clearBtn.addEventListener('click', clearFields);
-    const agreement = document.querySelector('#agreement');
-    agreement.addEventListener('change', enableSubmit);
-  };
+  // window.onload = function () {
+  //   const clearBtn = document.querySelector('#clear-btn');
+  //   clearBtn.addEventListener('click', clearFields);
+  //   const agreement = document.querySelector('#agreement');
+  //   agreement.addEventListener('change', enableSubmit);
+  // };
   
