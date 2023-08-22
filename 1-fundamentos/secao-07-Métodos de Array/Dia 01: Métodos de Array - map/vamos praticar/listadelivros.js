@@ -1,5 +1,4 @@
 
-
  const bookList = {
     books: [
       {
@@ -54,3 +53,5 @@
       },
     ],
 };
+
+module.exports = { bookList };
