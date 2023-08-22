@@ -127,3 +127,37 @@ Copiar
   }
 /* 
 } */
+No final, teremos adicionado ao arquivo kitten-kare.css as seguintes regras:
+
+Copiar
+@media print {
+  #header,
+  #navigation,
+  #footer {
+    display: none;
+  }
+
+  #content-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  #aside {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+  }
+  #navigation ul {
+    flex-direction: column;
+  }
+  #header {
+    position: fixed;
+    width: 100%;
+    height: 75px;
+  }
+  #navigation {
+    padding-top: 75px;
+  }
+}
