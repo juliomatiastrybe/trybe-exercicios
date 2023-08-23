@@ -1,5 +1,5 @@
 ## seção de exercicios do funda-sec07-dia01
-
+- [x] exercicios concluídos!
 # Exercícios - agora, a prática
 
 # Exercício 1

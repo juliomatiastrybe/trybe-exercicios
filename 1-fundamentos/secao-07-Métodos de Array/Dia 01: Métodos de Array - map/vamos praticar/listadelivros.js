@@ -54,4 +54,4 @@
     ],
 };
 
-module.exports = bookList;
+module.exports = bookList.books;
