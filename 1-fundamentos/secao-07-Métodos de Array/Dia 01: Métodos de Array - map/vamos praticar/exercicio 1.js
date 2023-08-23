@@ -8,5 +8,11 @@
 
 const temperaturesCelsius = [23, 10, 32, 21, 47];
 
-const convertFahrenheit = temperaturesCelsius.map((celsius) => (celsius * 9/5) + 32);
-console.log(convertFahrenheit);
+const convertFahrenheit = (temperatures) => {
+    const convertedFahrenheit = temperatures.map((temperature) => {
+        return (temperature * 9/5) + 32;
+    })
+    return convertedFahrenheit;
+};
+
+console.log(convertFahrenheit(temperaturesCelsius));
