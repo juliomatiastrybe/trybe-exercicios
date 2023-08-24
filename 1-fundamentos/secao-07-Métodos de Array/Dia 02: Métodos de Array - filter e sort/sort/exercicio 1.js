@@ -19,6 +19,7 @@ const people = [
   console.log('decrescente por age', people);
 
 // usando o metodo .localeCompare()
+
 // ORNDE DECRESCENTE
   const sortNameDesc = (array) => {
     return array.sort((a, b) => b.name.localeCompare(a.name));
