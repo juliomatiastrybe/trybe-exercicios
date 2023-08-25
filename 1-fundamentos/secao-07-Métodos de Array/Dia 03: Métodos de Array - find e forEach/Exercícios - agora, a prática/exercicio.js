@@ -179,12 +179,14 @@ const buildString = (name, capital, currencieCode, currencieName) => {
     return `${name} - ${capital} - ${currencieCode} - ${currencieName}`;
 };
 
-const newStructureArray = () => countries.map(({ name, capital, currencies}) => {
+const newStructureArray = () => { 
+    const mappedResults = countries.map(({ name, capital, currencies}) => {
     const [ currencie ] = currencies;
     // console.log(currencie);
     // console.log(currencie.code);
     const resultStructure = buildString(name, capital, currencie.code, currencie.name);
     return resultStructure;
 })
-
+    return mappedResults.join('\n');
+}
 console.log(newStructureArray());
