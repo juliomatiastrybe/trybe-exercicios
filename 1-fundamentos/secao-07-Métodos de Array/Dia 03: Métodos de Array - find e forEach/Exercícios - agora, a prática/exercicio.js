@@ -189,4 +189,4 @@ const newStructureArray = () => {
 })
     return mappedResults.join('\n');
 }
-console.log(newStructureArray());
+// console.log(newStructureArray());
