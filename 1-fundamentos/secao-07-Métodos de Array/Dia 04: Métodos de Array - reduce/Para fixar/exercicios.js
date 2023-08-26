@@ -5,7 +5,8 @@ const numbers = [18, 19, 23, 53, 4, 5, 76, 23, 54];
 
 const sumNumbers = (arrayNumbers) => {
     const resultSum = arrayNumbers.reduce((sum, number) => {
-        return sum += number;
+        if (number % 2 === 0) sum += number;
+        return sum;
     }, 0);
     return resultSum;
 }
@@ -110,7 +111,7 @@ const bestMatter = (array) => {
                 bestGrade = course;
             }
             return bestGrade;
-        }, { name: '', grade: 0 });
+        }, { grade: 0 });
 
         const resultObjectStudent = {
             name,
