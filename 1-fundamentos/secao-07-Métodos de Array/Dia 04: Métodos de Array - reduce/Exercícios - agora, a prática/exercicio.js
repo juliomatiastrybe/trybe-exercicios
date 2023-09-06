@@ -163,3 +163,44 @@ const getLargestCountriesByRegion = (array) => array.reduce((regionCountry, { na
 
 
 console.log(getLargestCountriesByRegion(countries));
+
+
+
+// const data = require('../data/zoo_data');
+
+// const { species } = data;
+
+// const filterCountAnimals = (array) => array.reduce((objectAnimals, specie) => {
+//   const objectCountAnimal = {
+//     ...objectAnimals,
+//     [specie.name]: specie.residents.length,
+//   };
+//   return objectCountAnimal;
+// }, {});
+
+// const countAnimalsSex = (arraySpecie, sex) => {
+//   const arrObjectSexForSpecie = arraySpecie.map(({ name, residents }) => {
+//     const newObjectSpecie = {
+//       name,
+//       residents: residents.filter((resident) => resident.sex === sex),
+//     };
+//     return newObjectSpecie;
+//   });
+//   return filterCountAnimals(arrObjectSexForSpecie);
+// };
+
+// const countAnimals = (animal = species) => {
+//   let passedSpecie = animal;
+//   const arrayFindForSpecie = [];
+//   if (animal.species) {
+//     const findForSpecie = species
+//       .find((specie) => specie.name === animal.species);
+//     arrayFindForSpecie.push(findForSpecie);
+//     passedSpecie = arrayFindForSpecie;
+//     if (animal.sex) return countAnimalsSex(passedSpecie, animal.sex);
+//   }
+
+//   return filterCountAnimals(passedSpecie);
+// };
+
+// console.log(countAnimals({ species: 'giraffes', sex: 'female' }));
