@@ -4,13 +4,17 @@
   "description": "para fazer  exercícios na minha jornada da Trybe.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --open",
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nanoid": "^4.0.2"
+    "@trybe/eslint-config-frontend": "^1.11.4",
+    "nanoid": "^4.0.2",
+    "vite": "^4.4.9"
   },
   "type": "module"
 }
