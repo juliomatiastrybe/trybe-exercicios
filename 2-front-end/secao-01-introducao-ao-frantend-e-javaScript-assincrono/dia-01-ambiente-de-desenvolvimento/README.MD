@@ -20,3 +20,8 @@ ultilizar o "import" e o "export", sem a nececidade de colocar o caminho do arqu
 
 Para instalar o ESLint do modulo de Front-end da Trybe execute, no seu terminal, o comando:
 npm install @trybe/eslint-config-frontend
+
+Exercício - Clipboard copy
+Utilizando o código apresentado no conteúdo, vamos implementar uma nova funcionalidade à aplicação. Ao clicar na senha gerada, a aplicação deverá copiar a senha para a área de transferência. Para isso, instale e utilize a biblioteca clipboard-copy.
+
+[x] exercicio concluído. 
