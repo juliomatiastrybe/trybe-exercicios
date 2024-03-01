@@ -1,19 +1,14 @@
 {
   "root": true,
-  "env": {
-    "es2020": true
-  },
-  "extends": "trybe-backend",
+  "extends": ["trybe-backend"],
   "rules": {
-    "sonarjs/no-duplicate-string": [
-      "error",
-      5
-    ],
-    "sonarjs/prefer-object-literal": "off",
-    "mocha/no-setup-in-describe": "off",
-    "indent": [
-      "error",
-      2
+    "sonarjs/no-duplicate-string": ["error", 5],
+    "max-lines": [
+      "error", 
+      {
+        "max": 60, 
+        "skipComments": true
+      }
     ],
     "max-len": [
       "error",
@@ -22,14 +17,10 @@
         "ignoreComments": true,
         "ignoreUrls": true
       }
+    ],
+    "indent": [
+      "error",
+      2
     ]
-  },
-  "overrides": [
-    {
-      "files": ["tests/**/*.test.js"],
-      "rules": {
-        "max-len": "off"
-      }
-    }
-  ]
+  }
 }
