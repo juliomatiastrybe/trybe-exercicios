@@ -1,12 +1,15 @@
-FROM node:18
+FROM node:16.14.2
 
+# Diretório padrão de execução
 WORKDIR /app
 
-COPY package.json .
-
+# Instala as dependências Node
+COPY package*.json ./ 
 RUN npm install
 
-COPY . .
+# Copia testes do avaliador e arquivos do projeto
+COPY src ./app/src
 
-ENTRYPOINT [ "npm" ]
-CMD ["start"]
+EXPOSE 3001
+
+CMD [ "npm", "start"]
