@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  backend:
+    build: .
+    container_name: api_books
+    command: npm run dev
+    restart: always
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3001:3001
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: api_books
+      MYSQL_HOST: localhost
+  db:
+    container_name: api_books_db
+    image: mysql:8.0.32
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
