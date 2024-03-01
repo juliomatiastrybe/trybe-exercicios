@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  mysql-orm-pratica:
+    image: mysql
+    volumes:
+      - ./db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+
+  trybe-ex-pratica:
+    build: .
+    image: trybe-ex-pratica
+    restart: always
+    ports:
+      - "3001:3001"
+    command: run dev
+    volumes:
+      - ./src:/app/src
+    environment:
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: orm_trybe
+      DB_HOST: mysql-orm-pratica
