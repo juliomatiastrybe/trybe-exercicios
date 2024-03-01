@@ -22,5 +22,5 @@ services:
     environment:
       DB_USER: root
       DB_PASSWORD: root
-      DB_NAME: orm_trybe
+      DB_NAME: orm_pratica
       DB_HOST: mysql-orm-pratica
