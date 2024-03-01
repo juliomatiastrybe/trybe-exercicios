@@ -4,6 +4,7 @@ services:
   backend:
     build: .
     container_name: api_books
+    command: npm run dev
     restart: always
     volumes:
       - ./src:/app/src

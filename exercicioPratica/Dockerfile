@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copia testes do avaliador e arquivos do projeto
-COPY src ./app/src
+COPY . .
 
 EXPOSE 3001
 
